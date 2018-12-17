@@ -1,43 +1,49 @@
 %!TEX root = jir2018aspects.tex
 \begin{table}
  \centering
-    \caption{Behavioural and performance measures across each condition, system and task.}
+    \caption{Behavioural and performance measures reported across the four experimental conditions (top table), systems and tasks (bottom table).}
     \label{tbl_actions}
-    %\renewcommand{\arraystretch}{1.4}
+    \renewcommand{\arraystretch}{1.4}
     %\begin{center}
     %\begin{small}
-    %\begin{tabulary}{\textwidth}{L{1.90cm}||D{1.55cm}|D{1.55cm}|D{1.55cm}|D{1.55cm}||D{1.55cm}|D{1.55cm}||D{1.55cm}|D{1.55cm}}
-    \begin{tabulary}{\textwidth}{|c||c|c|c|c|}
+    \begin{tabulary}{\textwidth}{L{3.4cm}||D{1.55cm}|D{1.55cm}|D{1.55cm}|D{1.55cm}}
+    %\begin{tabulary}{\textwidth}{|c||c|c|c|c|}
     \hline
     % OUTPUT FROM script
-    & \multicolumn{4}{c||}{\textbf{Experimental Conditions}} \\
+    & \multicolumn{4}{c}{\textbf{Experimental Conditions}} \\
     \cline{2-5}
     \textbf{Actions} & \textbf{\emph{D.As}} & \textbf{\emph{ND.As}} & \textbf{\emph{D.Ad}} & \textbf{\emph{ND.Ad}}\\  \hline\hline
     % START DATA
     \textbf{\emph{\#Queries}} & 5.92$\pm$ 0.88 & 5.25$\pm$ 0.80 & 4.96$\pm$ 0.74 & 5.20$\pm$ 0.69 \\ \hline
-    \textbf{\emph{\#SERPs/Q.}} & 1.78$\pm$ 0.14 & 2.42$\pm$ 0.24 & 2.28$\pm$ 0.31 & 2.28$\pm$ 0.20 \\ \hline
-    \textbf{\emph{Doc./Q.}} & 3.02$\pm$ 0.39 & 3.65$\pm$ 0.46 & 3.48$\pm$ 0.51 & 3.23$\pm$ 0.37 \\ \hline
-    \textbf{\emph{Depth/Q.}} & 12.85$\pm$ 1.49 & 15.73$\pm$ 1.45 & 16.19$\pm$ 2.14 & 13.94$\pm$ 1.93 \\ \hline
+    \textbf{\emph{\#SERPs/Query}} & 1.78$\pm$ 0.14 & 2.42$\pm$ 0.24 & 2.28$\pm$ 0.31 & 2.28$\pm$ 0.20 \\ \hline
+    \textbf{\emph{Documents/Query}} & 3.02$\pm$ 0.39 & 3.65$\pm$ 0.46 & 3.48$\pm$ 0.51 & 3.23$\pm$ 0.37 \\ \hline
+    \textbf{\emph{Depth/Query}} & 12.85$\pm$ 1.49 & 15.73$\pm$ 1.45 & 16.19$\pm$ 2.14 & 13.94$\pm$ 1.93 \\ \hline\hline
     \textbf{\emph{\#Saved}} & 5.80$\pm$ 0.26 & 5.96$\pm$ 0.25 & 5.92$\pm$ 0.25 & 5.78$\pm$ 0.20 \\ \hline
     \textbf{\emph{\#TREC Saved}} & 2.63$\pm$ 0.22 & 2.18$\pm$ 0.23 & 2.51$\pm$ 0.23 & 2.22$\pm$ 0.22 \\ \hline
-    \textbf{\emph{\#TREC Non.}} & 1.75$\pm$ 0.22 & 1.96$\pm$ 0.23 & 1.37$\pm$ 0.22 & 1.82$\pm$ 0.23  \\ \hline
-    \textbf{\emph{\#Ent. Found}} & 7.22$\pm$ 0.94* & 4.31$\pm$ 0.60* & 5.82$\pm$ 0.77 & 4.37$\pm$ 0.59*  \\ \hline
-    \textbf{\emph{\#Docs. Ent.}} & 3.20$\pm$ 0.21* & 2.35$\pm$ 0.20* & 2.63$\pm$ 0.23 & 2.02$\pm$ 0.18* \\ \hline
+    \textbf{\emph{\#TREC Non-Relevant}} & 1.75$\pm$ 0.22 & 1.96$\pm$ 0.23 & 1.37$\pm$ 0.22 & 1.82$\pm$ 0.23  \\ \hline
+    \textbf{\emph{\#Entities Found}} & 7.22$\pm$ 0.94* & 4.31$\pm$ 0.60* & 5.82$\pm$ 0.77 & 4.37$\pm$ 0.59*  \\ \hline
+    \textbf{\emph{\#Docs w/ New Entities}} & 3.20$\pm$ 0.21* & 2.35$\pm$ 0.20* & 2.63$\pm$ 0.23 & 2.02$\pm$ 0.18* \\ \hline
+    \end{tabulary}
+    
+    \vspace{5mm}
+    
+    \begin{tabulary}{\textwidth}{L{3.4cm}||D{1.55cm}|D{1.55cm}|D{1.55cm}|D{1.55cm}}
+    %\begin{tabulary}{\textwidth}{|c||c|c|c|c|}
     \hline
-         & \multicolumn{2}{c|}{\textbf{Systems}} & \multicolumn{2}{c|}{\textbf{Tasks}} \\
+         & \multicolumn{2}{c|}{\textbf{Systems}} & \multicolumn{2}{c}{\textbf{Tasks}} \\
          \cline{2-5}
  \textbf{Actions}       & \textbf{\emph{ND}} & \textbf{\emph{D}} & \textbf{\emph{Ad.}} & \textbf{\emph{As.}} \\
         \hline
         \hline
  \textbf{\emph{\#Queries}} & 5.23$\pm$ 0.53 & 5.44$\pm$ 0.58 & 5.08$\pm$ 0.51 & 5.59$\pm$ 0.59 \\ \hline
- \textbf{\emph{\#SERPs/Q.}} & 2.35$\pm$ 0.16 & 2.03$\pm$ 0.17 & 2.28$\pm$ 0.18 & 2.10$\pm$ 0.14 \\ \hline
- \textbf{\emph{Doc./Q.}} & 3.44$\pm$ 0.29 & 3.25$\pm$ 0.32 & 3.36$\pm$ 0.31 & 3.34$\pm$ 0.30 \\ \hline
- \textbf{\emph{Depth/Q.}} & 14.84$\pm$ 1.58 & 14.52$\pm$ 1.31 & 15.07$\pm$ 1.44 & 14.29$\pm$ 1.47 \\ \hline
+ \textbf{\emph{\#SERPs/Query}} & 2.35$\pm$ 0.16 & 2.03$\pm$ 0.17 & 2.28$\pm$ 0.18 & 2.10$\pm$ 0.14 \\ \hline
+ \textbf{\emph{Documents/Query}} & 3.44$\pm$ 0.29 & 3.25$\pm$ 0.32 & 3.36$\pm$ 0.31 & 3.34$\pm$ 0.30 \\ \hline
+ \textbf{\emph{Depth/Query}} & 14.84$\pm$ 1.58 & 14.52$\pm$ 1.31 & 15.07$\pm$ 1.44 & 14.29$\pm$ 1.47 \\ \hline\hline
  \textbf{\emph{\#Saved}} & 5.87$\pm$ 0.16 & 5.86$\pm$ 0.18 & 5.85$\pm$ 0.16 & 5.88$\pm$ 0.18 \\ \hline
  \textbf{\emph{\#TREC Saved}}  & 2.20$\pm$ 0.16 & 2.57$\pm$ 0.16 & 2.36$\pm$ 0.16 & 2.40$\pm$ 0.16 \\ \hline
-    \textbf{\emph{\#TREC Non.}}  & 1.89$\pm$ 0.16 & 1.56$\pm$ 0.16 & 1.60$\pm$ 0.16 & 1.85$\pm$ 0.16 \\ \hline
-    \textbf{\emph{\#Ent. Found}}  & 4.34$\pm$ 0.42* & 6.52$\pm$ 0.61* & 5.10$\pm$ 0.49 & 5.76$\pm$ 0.57 \\ \hline
-    \textbf{\emph{\#Docs. Ent.}} & 2.19$\pm$ 0.13* & 2.91$\pm$ 0.16* & 2.32$\pm$ 0.15* & 2.77$\pm$ 0.15* \\ \hline     
+    \textbf{\emph{\#TREC Non-Relevant}}  & 1.89$\pm$ 0.16 & 1.56$\pm$ 0.16 & 1.60$\pm$ 0.16 & 1.85$\pm$ 0.16 \\ \hline
+    \textbf{\emph{\#Entities Found}}  & 4.34$\pm$ 0.42* & 6.52$\pm$ 0.61* & 5.10$\pm$ 0.49 & 5.76$\pm$ 0.57 \\ \hline
+    \textbf{\emph{\#Docs w/ New Entities}} & 2.19$\pm$ 0.13* & 2.91$\pm$ 0.16* & 2.32$\pm$ 0.15* & 2.77$\pm$ 0.15* \\ \hline     
 
        % END DATA
     \end{tabulary}
@@ -48,33 +54,40 @@
 
 \begin{table}
 %\begin{table*}[t]
-    \caption{Interaction times across each condition, system and task. Included is: the mean total session time; the per query time \emph{(Per Q.)}; the per document time \emph{(Per D.)}; and the per result summary (snippet) time \emph{(Per Snip.)}. Results presented in seconds.}
+    \caption{Interaction times across each experimental condition (top table), system and task (bottom table). Included is: the mean total session time \emph{(Total Session)}; the per query time \emph{(Per Query)}; the per document time \emph{(Per Document)}; and the per result summary (snippet) time \emph{(Per Snippet)}. Also included are mean total times. Results are presented in seconds.}
     \label{tbl_times}
     \renewcommand{\arraystretch}{1.4}
     \begin{center}
-         \begin{tabulary}{\textwidth}{|c||c|c|c|c|}
+         \begin{tabulary}{\textwidth}{L{2.05cm}||D{1.9cm}|D{1.9cm}|D{1.9cm}|D{1.9cm}}
     \hline   
    % OUTPUT FROM script
-    & \multicolumn{4}{c|}{\textbf{Experimental Conditions}}  \\
+    & \multicolumn{4}{c}{\textbf{Experimental Conditions}}  \\
     \cline{2-5}
     \textbf{Time} & \textbf{\emph{D.As}} & \textbf{\emph{ND.As}} & \textbf{\emph{D.Ad}} & \textbf{\emph{ND.Ad}}  \\ \hline\hline
     
-\textbf{\emph{Total Session}} & \small{443.65$\pm$ 45.05} & \small{430.50$\pm$ 38.39} & \small{432.18$\pm$ 49.87} & \small{447.55$\pm$ 47.82}  \\ \hline
-\textbf{TotalQ} & \small{45.26$\pm$ 6.48} & \small{47.76$\pm$ 8.41} & \small{46.40$\pm$ 8.01} & \small{43.22$\pm$ 6.55} \\ \hline
-\textbf{\emph{Per Q.}} & \small{8.80$\pm$ 0.89} & \small{9.99$\pm$ 1.21} & \small{9.69$\pm$ 0.79} & \small{8.69$\pm$ 0.57} \\ \hline
-\textbf{TotalD} & \small{162.93$\pm$ 20.47} & \small{144.85$\pm$ 16.73} & \small{139.58$\pm$ 16.70} & \small{152.83$\pm$ 27.69} \\ \hline
-\textbf{\emph{Per D.}} & \small{15.97$\pm$ 1.96} & \small{13.03$\pm$ 1.01} & \small{13.66$\pm$ 1.02} & \small{15.09$\pm$ 2.20}  \\ \hline
-\textbf{\emph{Per Snip.}} & \small{1.59$\pm$ 0.09} & \small{1.75$\pm$ 0.15} & \small{1.71$\pm$ 0.11} & \small{1.71$\pm$ 0.13} \\ \hline
-\hline
-& \multicolumn{2}{c|}{\textbf{Systems}} & \multicolumn{2}{c|}{\textbf{Tasks}} \\
+\textbf{\emph{Total Session}} & \small{443.65$\pm$ 45.05} & \small{430.50$\pm$ 38.39} & \small{432.18$\pm$ 49.87} & \small{447.55$\pm$ 47.82}  \\ \hline\hline
+\textbf{\emph{Total Query}} & \small{45.26$\pm$ 6.48} & \small{47.76$\pm$ 8.41} & \small{46.40$\pm$ 8.01} & \small{43.22$\pm$ 6.55} \\ \hline
+\textbf{\emph{Per Query}} & \small{8.80$\pm$ 0.89} & \small{9.99$\pm$ 1.21} & \small{9.69$\pm$ 0.79} & \small{8.69$\pm$ 0.57} \\ \hline\hline
+\textbf{\emph{Total Doc.}} & \small{162.93$\pm$ 20.47} & \small{144.85$\pm$ 16.73} & \small{139.58$\pm$ 16.70} & \small{152.83$\pm$ 27.69} \\ \hline
+\textbf{\emph{Per Document}} & \small{15.97$\pm$ 1.96} & \small{13.03$\pm$ 1.01} & \small{13.66$\pm$ 1.02} & \small{15.09$\pm$ 2.20}  \\ \hline\hline
+\textbf{\emph{Per Snippet}} & \small{1.59$\pm$ 0.09} & \small{1.75$\pm$ 0.15} & \small{1.71$\pm$ 0.11} & \small{1.71$\pm$ 0.13} \\ \hline
+
+    \end{tabulary}
+    
+    \vspace{5mm}
+    
+    \begin{tabulary}{\textwidth}{L{2.05cm}||D{1.9cm}|D{1.9cm}|D{1.9cm}|D{1.9cm}}
+        \hline
+
+& \multicolumn{2}{c|}{\textbf{Systems}} & \multicolumn{2}{c}{\textbf{Tasks}} \\
  \cline{2-5}
 \textbf{Time} & \textbf{\emph{ND}} & \textbf{\emph{D}} & \textbf{\emph{Ad.}} & \textbf{\emph{As.}} \\ \hline\hline
-\textbf{\emph{Total Session}} & \small{439.02$\pm$ 30.52} & \small{437.91$\pm$ 33.44} & \small{439.86$\pm$ 34.38} & \small{437.08$\pm$ 29.45} \\ \hline
-\textbf{TotalQ} & \small{45.49$\pm$ 5.31} & \small{45.83$\pm$ 5.13} & \small{44.81$\pm$ 5.15} & \small{46.51$\pm$ 5.28} \\ \hline
-\textbf{\emph{Per Q.}}  & \small{9.34$\pm$ 0.67} & \small{9.25$\pm$ 0.59} & \small{9.19$\pm$ 0.49} & \small{9.39$\pm$ 0.75} \\ \hline
-\textbf{TotalD} & \small{148.84$\pm$ 16.10} & \small{151.26$\pm$ 13.19} & \small{146.21$\pm$ 16.10} & \small{153.89$\pm$ 13.18} \\ \hline
-\textbf{\emph{Per D.}}  & \small{14.06$\pm$ 1.21} & \small{14.81$\pm$ 1.10} & \small{14.37$\pm$ 1.21} & \small{14.50$\pm$ 1.11} \\ \hline
-\textbf{\emph{Per Snip.}} & \small{1.73$\pm$ 0.10} & \small{1.65$\pm$ 0.07} & \small{1.71$\pm$ 0.08} & \small{1.67$\pm$ 0.09} \\ \hline
+\textbf{\emph{Total Session}} & \small{439.02$\pm$ 30.52} & \small{437.91$\pm$ 33.44} & \small{439.86$\pm$ 34.38} & \small{437.08$\pm$ 29.45} \\ \hline\hline
+\textbf{\emph{Total Query}} & \small{45.49$\pm$ 5.31} & \small{45.83$\pm$ 5.13} & \small{44.81$\pm$ 5.15} & \small{46.51$\pm$ 5.28} \\ \hline
+\textbf{\emph{Per Query}}  & \small{9.34$\pm$ 0.67} & \small{9.25$\pm$ 0.59} & \small{9.19$\pm$ 0.49} & \small{9.39$\pm$ 0.75} \\ \hline\hline
+\textbf{\emph{Total Doc.}} & \small{148.84$\pm$ 16.10} & \small{151.26$\pm$ 13.19} & \small{146.21$\pm$ 16.10} & \small{153.89$\pm$ 13.18} \\ \hline
+\textbf{\emph{Per Document}}  & \small{14.06$\pm$ 1.21} & \small{14.81$\pm$ 1.10} & \small{14.37$\pm$ 1.21} & \small{14.50$\pm$ 1.11} \\ \hline\hline
+\textbf{\emph{Per Snippet}} & \small{1.73$\pm$ 0.10} & \small{1.65$\pm$ 0.07} & \small{1.71$\pm$ 0.08} & \small{1.67$\pm$ 0.09} \\ \hline
     % END OUTPUT
     \end{tabulary}
     \end{center}
@@ -100,26 +113,24 @@ To begin with our analysis, we first examined whether the performance experience
 This provides our first finding of note. When using \textbf{\emph{ND}}, participants issued more queries -- but were slightly shorter and more varied -- to accomplish their tasks. 
 
 
-\begin{table}[t]
-    \caption{Interaction probabilities, as observed over the four experimental conditions. Refer to Section~\ref{sec:method:behaviours} for an explanation of each probability's meaning.}
+\begin{table}[t!]
+    \caption{Interaction probabilities, as observed over the four experimental conditions trialled in this study. Refer to Section~\ref{sec:method:behaviours} for an explanation of each probability's meaning.}
     \label{tbl_probabilities}
     \renewcommand{\arraystretch}{1.4}
     \begin{center}
     \begin{small}
-   % \begin{tabulary}{\textwidth}{L{1.2cm}||D{1.35cm}|D{1.35cm}|D{1.35cm}|D{1.35cm}}
-    \begin{tabulary}{\textwidth}{|c||c|c|c|c|}
+    \begin{tabulary}{\textwidth}{L{3.2cm}||D{1.6cm}|D{1.6cm}|D{1.6cm}|D{1.6cm}}
    
    \hline
     
     % OUTPUT FROM script
-    \textbf{Prob.} & \textbf{\emph{D.As}} & \textbf{\emph{ND.As}} & \textbf{\emph{D.Ad}} & \textbf{\emph{ND.Ad}} \\ \hline\hline
-    
+    \textbf{Probability} & \textbf{\emph{D.As}} & \textbf{\emph{ND.As}} & \textbf{\emph{D.Ad}} & \textbf{\emph{ND.Ad}} \\ \hline\hline
+    \boldmath{$P(C)$} & 0.16$\pm$ 0.01* & 0.21$\pm$ 0.02* & 0.16$\pm$ 0.01* & 0.20$\pm$ 0.01* \\ \hline
+    \boldmath{$P(C|R)$} & 0.27$\pm$ 0.03 & 0.30$\pm$ 0.04 & 0.25$\pm$ 0.03 & 0.31$\pm$ 0.04 \\ \hline
+    \boldmath{$P(C|N)$} & 0.13$\pm$ 0.02* & 0.18$\pm$ 0.02* & 0.13$\pm$ 0.01* & 0.17$\pm$ 0.02* \\ \hline\hline
     \boldmath{$P(M)$} & 0.67$\pm$ 0.03 & 0.66$\pm$ 0.03 & 0.70$\pm$ 0.03 & 0.71$\pm$ 0.04 \\ \hline
     \boldmath{$P(M|R)$} & 0.78$\pm$ 0.04 & 0.63$\pm$ 0.05 & 0.74$\pm$ 0.04 & 0.67$\pm$ 0.05 \\ \hline
     \boldmath{$P(M|N)$} & 0.59$\pm$ 0.04 & 0.61$\pm$ 0.04 & 0.65$\pm$ 0.04 & 0.65$\pm$ 0.04 \\ \hline
-    \boldmath{$P(C)$} & 0.16$\pm$ 0.01* & 0.21$\pm$ 0.02* & 0.16$\pm$ 0.01* & 0.20$\pm$ 0.01* \\ \hline
-    \boldmath{$P(C|R)$} & 0.27$\pm$ 0.03 & 0.30$\pm$ 0.04 & 0.25$\pm$ 0.03 & 0.31$\pm$ 0.04 \\ \hline
-    \boldmath{$P(C|N)$} & 0.13$\pm$ 0.02* & 0.18$\pm$ 0.02* & 0.13$\pm$ 0.01* & 0.17$\pm$ 0.02* \\ \hline
     % END REDUCED OUTPUT
     \end{tabulary}
     \end{small}
@@ -152,7 +163,7 @@ However, when we look at the entity-related measures, we note that participants 
 \paragraph{Post Task and Post System Questionnaires.} There were no notable significant differences between conditions, tasks, or system for any of the post-task questions. For the post system questionnaires, participants were roughly evenly split between their preference for the diversified or non-diversified system -- again with no significant differences. This finding suggests that despite the substantial (and significant) difference in aspectual recall and other system performance measures, between the systems, participants seemed largely ambivalent to the different system's influence. Though, of course, their observed behaviours do suggest that the system (and task) did affect their performance.
 
 \begin{figure}[t!]
-\includegraphics[width=0.8\linewidth]{figures/cg-new.pdf}
+\includegraphics[width=\textwidth]{figures/cg-fromthesis.pdf}
 \caption{Plots illustrating the \emph{Cumulative Gain (CG)} attained by subjects of the study, on average, over the first 100 seconds of a search session. Plots are analogous to those in Figure~\ref{fig_ift_patches}. Also included in are fitted curves (dashed lines).} \label{fig_cg}
 \end{figure}
 
@@ -180,13 +191,13 @@ Table~\ref{tbl_plot_fitting} shows the parameters and correlation coefficients f
 
 
 \begin{table}[t]
-    \caption{Table highlighting the fitting parameters for the gain curves illustrated in Figure~\ref{fig_cg} over each experimental condition. Also included are the estimations from the model for the time to examine a document, and the depth to which subjects should go -- as well as the observed number of documents examined, and stopping depth (on average).}
+    \caption{Fitting parameters for the gain curves illustrated in Figure~\ref{fig_cg} over each experimental condition. Also included are the estimations from the model for the time to examine a document, and the depth to which subjects should go \emph{(Pred. Docs.)} -- as well as the observed number of documents examined \emph{(Actual Docs.)}, and stopping depth (on average).}
     \label{tbl_plot_fitting}
     \renewcommand{\arraystretch}{1.4}
     \begin{center}
     \begin{small}
-    %\begin{tabulary}{\textwidth}{L{1.35cm}||D{1cm}|D{1cm}|D{1cm}|D{1cm}|D{1cm}}
-    \begin{tabulary}{\textwidth}{c||c|c|c|c|c}
+    \begin{tabulary}{\textwidth}{L{4.2cm}||D{1cm}|D{1cm}|D{1cm}|D{1cm}|D{1cm}}
+    %\begin{tabulary}{\textwidth}{c||c|c|c|c|c}
     
     \hline
     
@@ -194,7 +205,7 @@ Table~\ref{tbl_plot_fitting} shows the parameters and correlation coefficients f
 
 & \multicolumn{3}{c|}{\textbf{Model Fitting}} & \textbf{Pred.} & \textbf{Actual} \\
 
-\textbf{Condition} & \boldmath{$a$} & \boldmath{$b$} & \boldmath{$r^2$} &  \hspace*{-0.5mm}\textbf{Docs.} & \hspace*{-0.5mm}\textbf{Docs.}\\ \hline\hline
+\textbf{Experimental Condition} & \boldmath{$a$} & \boldmath{$b$} & \boldmath{$r^2$} &  \hspace*{-0.5mm}\textbf{Docs.} & \hspace*{-0.5mm}\textbf{Docs.}\\ \hline\hline
 
 \textbf{\emph{ND.Ad}} & $-1.08$ & $0.48$ & $0.989$ & $3.68$ & $3.23$  \\ \hline
 \textbf{\emph{ND.As}} & $-0.57$ & $0.23$ & $0.987$ & $4.92$ & $3.65$  \\ \hline\hline

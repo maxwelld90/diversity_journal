@@ -46,6 +46,7 @@ grestore
 \smartqed  % flush right qed marks, e.g. at end of proof
 %
 
+\usepackage{showframe}
 \usepackage{url}
 \usepackage{color}
 \usepackage{graphics,graphicx}
@@ -82,6 +83,9 @@ grestore
 \newcommand{\todo}[1]{\textcolor{red}{#1}}
 \newcommand{\anon}[1]{\textcolor{black}{~(anon.)}}
 \newcommand{\anoncite}[1]{\textcolor{black}{[anon.]}}
+
+\newcolumntype{D}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\arraybackslash}p{#1}}
 
 \begin{document}
 
@@ -124,7 +128,7 @@ Based on Information Foraging Theory, we infer two, seemingly counter intuitive,
 will lead to searchers to examine fewer documents per query, and issue more queries. To this end, we performed a within-subjects user study using the \emph{TREC AQUAINT} collection with 51 participants, examining the differences in search performance and behaviour when using: \emph{(i)} a non-diversified system (\emph{BM25}); versus \emph{(ii)} a diversified system (BM25+\emph{xQuAD}) when the search task is either: \emph{(a)} ad-hoc; or \emph{(b)} aspectual. Our results show a number of notable findings in terms of search behaviour, with participants on the diversified system, issuing more queries, and examining fewer documents per query. Furthermore, we show that participants on the diversified system were more confident about their decisions, more successful, and found a greater number of aspects about the topics. We also observed that the diversified system was preferred and led to greater success by participants, regardless of the search task. This work shows that searchers' behaviours (and thus the user model by which we evaluate systems) changes depending on the retrieval algorithm and task. This work motivates further research into  complex search tasks, such as aspectual retrieval, and how diversity can play an important role in improving the search experience, as well as potentially mitigate bias in search results.
 
 
-\keywords{First keyword \and Second keyword \and More}
+\keywords{Diversification \and User Study \and User Behavior}
 % \PACS{PACS code1 \and PACS code2 \and more}
 % \subclass{MSC code1 \and MSC code2 \and more}
 \end{abstract}
