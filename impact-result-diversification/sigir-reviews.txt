@@ -1,0 +1,103 @@
+----------------------- REVIEW 1 ---------------------
+PAPER: 242
+TITLE: The Impact of Result Diversification on Search Behaviour and Performance
+AUTHORS: David Maxwell, Leif Azzopardi and Yashar Moshfeghi
+
+Relevance to SIGIR: 4 (Relevant: Interesting to some SIGIR participants.)
+Originality of Work: 3 (Somewhat conventional: A number of people could have come up with this if they thought about it for a while.)
+Technical Soundness: 2 (There are many technical mistakes which makes the descriptions unreliable.)
+Quality of Presentation: 3 (Missing a few important details but the major points were clear.)
+Impact of Ideas or Results: 2 (Marginally interesting. May or may not be cited.)
+Adequacy of Citations: 4 (Mostly comprehensive: Review written well; there are one or two papers missing, but they aren't crucial omissions.)
+Reproducibility of Methods/Findings: 4 (Could be reproduced: Researchers could reproduce the methods and results with some effort.)
+Overall Evaluation: -1 (Unworthy (Reject): I think it should be rejected (does not reach the threshold of SIGIR).)
+Nominated for Best Paper: no
+Reviewer's Confidence: 3 (High)
+
+----------- Comments to the Author(s) -----------
+This paper investigates the effect of result diversification on interactive retrieval.
+This is an important, original topic.
+The described research uses two different search engines (with and without ) and two different evaluation metrics (w/ and wo/  diversification).
+As theoretical basis, the paper also refers to information foraging theory and uses it as basis for formulating the research hypotheses.
+
+However, table 1 shows that strange result that the diversification search engine gives a better performance even for standard P@n, which contradicts the underlying assumption that diversity should lead to weaker results here, in order to improve on the diversity-aware metrics. This outcome might be an artifact of the actual ranking method used, but this problem is not discussed at all in this paper. Figure 3d shows similar results, although using the same color and line style for both curves (on purpose?) makes it hard to recognize this.
+
+So the only interesting finding is the fact that users stop earlier than predicted by IFT, but the authors do not come up with a reasonable explanation for  this observation.
+
+Overall this is an interesting topic, but the paper suffers from the fact that the underlying systems do not behave as expected, and thus users also behave differently.
+
+
+----------------------- REVIEW 2 ---------------------
+PAPER: 242
+TITLE: The Impact of Result Diversification on Search Behaviour and Performance
+AUTHORS: David Maxwell, Leif Azzopardi and Yashar Moshfeghi
+
+Relevance to SIGIR: 5 (Highly relevant: Interesting to many SIGIR participants.)
+Originality of Work: 4 (Creative: Relatively few people in our community would have put these ideas together.)
+Technical Soundness: 4 (The authors mostly use appropriate description of technical facts but there are some minor mistakes.)
+Quality of Presentation: 4 (With all the essential content and understandable by most readers.)
+Impact of Ideas or Results: 3 (Interesting but not too influential. The work will be cited, but mainly for comparison or as a source of minor contributions.)
+Adequacy of Citations: 4 (Mostly comprehensive: Review written well; there are one or two papers missing, but they aren't crucial omissions.)
+Reproducibility of Methods/Findings: 5 (Easy to reproduce: Researchers could easily reproduce the methods and results described in the paper without much difficulty.)
+Overall Evaluation: -1 (Unworthy (Reject): I think it should be rejected (does not reach the threshold of SIGIR).)
+Nominated for Best Paper: no
+Reviewer's Confidence: 2 (Medium)
+
+----------- Comments to the Author(s) -----------
+This paper examines the impact of diversifying search results on the user’s search behavior and performance, specifically testing the hypotheses based on Information Foraging Theory, comparing ad-hoc and aspectual retrieval tasks. 
+
+The paper in general is well-written, with a clear explanation of the background, hypotheses, and methods, despite some typos throughout the document. The results section seems to lack evidence that there is a significant and substantial results obtained from the experiment.   
+
+Also I did expect to see some more explanation on the UX portion given that the authors have collected pre- and post- survey data on several aspects related to the search. Were there any interesting patterns observed when considering the survey data in addition to the search performance data? The text currently in the paper regarding this is brief and I'd like to have seen a more detailed explanation. That will also perhaps help strengthen the justification for the motivation and goal of this paper.
+
+
+----------------------- REVIEW 3 ---------------------
+PAPER: 242
+TITLE: The Impact of Result Diversification on Search Behaviour and Performance
+AUTHORS: David Maxwell, Leif Azzopardi and Yashar Moshfeghi
+
+Relevance to SIGIR: 5 (Highly relevant: Interesting to many SIGIR participants.)
+Originality of Work: 2 (Rather straightforward: Obvious, or a minor improvement on familiar techniques.)
+Technical Soundness: 3 (There are some mistakes in the description of techniques but the main idea is generally solid.)
+Quality of Presentation: 3 (Missing a few important details but the major points were clear.)
+Impact of Ideas or Results: 2 (Marginally interesting. May or may not be cited.)
+Adequacy of Citations: 4 (Mostly comprehensive: Review written well; there are one or two papers missing, but they aren't crucial omissions.)
+Reproducibility of Methods/Findings: 5 (Easy to reproduce: Researchers could easily reproduce the methods and results described in the paper without much difficulty.)
+Overall Evaluation: -1 (Unworthy (Reject): I think it should be rejected (does not reach the threshold of SIGIR).)
+Nominated for Best Paper: no
+Reviewer's Confidence: 2 (Medium)
+
+----------- Comments to the Author(s) -----------
+This paper reports the results of an experiment on the relationship between the type of search task (ad-hoc vs. aspectual) and the amount of diversification present in a retrieval system. The experiment's results are not significant, and the authors do not present an adequate alternative argument for the contribution of the paper. As such, I cannot recommend acceptance.
+
+Below, I outline in more detail what I believe to be the strengths and weakness of the present manuscript.
+
+== STRENGTHS ==
+
+* The study's methodological care and rigor is admirable.
+* The paper is well-written on the sentence level (although there is too much focus on detail and not enough attention to key issues like those described below).
+* As someone not directly in this research space, I found the RW section to be quite educational.
+
+
+== WEAKNESSES ==
+
+* The obvious weakness of this paper is that our statistical confidence in the results is weak. The lack of significant results shouldn't be an existential issue for a paper. However, non-significant results does mean that a paper faces a greater challenge to explain its contribution. This paper does not own up to this challenge, and instead communicates its results as if we did have strong statistical confidence in them. This paper will need to frame its results differently to succeed. I encourage the authors to find successful examples of papers in similar positions and to use these papers to inform a different framing. 
+* Another clear drawback of the paper is the strength of its argument about motivation and implications. After reading the paper, I'm left wondering why the results are important, either for the design of products or for our knowledge of information retrieval. There should be a direct and explicit argument for the implications of this work that is not currently present.
+* The novelty of this paper relative to work like [21] should be better elucidated.
+* The authors should follow standard norms for self-citation in double-blind peer review. Instead of using [anon], the authors should refer to themselves in the third person.
+* Many of the reported statistics do not have a clear tie to the overall narrative.
+
+
+-------------------------  METAREVIEW  ------------------------
+PAPER: 242
+TITLE: The Impact of Result Diversification on Search Behaviour and Performance
+
+RECOMMENDATION: reject
+
+The reviewers found this paper to be timely and the topic to be important for SIGIR community. They also appreciated the detailed description of the background, related work, and method presented in this paper. I think studying and implementing diversification in IR is a highly relevant issue, something that is needed now more than ever as we see a lot of polarization and misinformation in our world.
+
+However, the reviewers had a hard time seeing a clear and strong contribution of this paper. This is due to several factors, including lack of statistical confidence in the results, some missing details about the experiments and results, and weakness in presenting the novelty of this approach.
+
+I think some of these shortcomings are quite possible to address. For example, it should be easy to provide more explanation of the UX. It should also be feasible to go a little deeper into the analysis pertaining to the diversification search engine results (there seems to be some contradiction there). Some other things may take a bit more effort and it's not clear if they can be addressed with just a revision of the narrative.
+
+In summary, I think this is a good and timely topic and the authors have done a fairly good job presenting their work. The paper is weak when it comes to a few crucial components, including novelty of the approach and the significance of the results. I encourage the authors to carefully read through the reviewers' comments and plan their resubmission accordingly.

@@ -1,0 +1,173 @@
+%%%%%%%%%%%%%%%%%%%%%%% file template.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is a general template file for the LaTeX package SVJour3
+% for Springer journals.          Springer Heidelberg 2010/09/16
+%
+% Copy it to a new file with a new name and use it as the basis
+% for your article. Delete % signs as needed.
+%
+% This template includes a few options for different layouts and
+% content for various journals. Please consult a previous issue of
+% your journal as needed.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% First comes an example EPS file -- just ignore it and
+% proceed on the \documentclass line
+% your LaTeX will extract the file if required
+\begin{filecontents*}{example.eps}
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 19 19 221 221
+%%CreationDate: Mon Sep 29 1997
+%%Creator: programmed by hand (JK)
+%%EndComments
+gsave
+newpath
+  20 20 moveto
+  20 220 lineto
+  220 220 lineto
+  220 20 lineto
+closepath
+2 setlinewidth
+gsave
+  .4 setgray fill
+grestore
+stroke
+grestore
+\end{filecontents*}
+%
+\RequirePackage{fix-cm}
+%
+%\documentclass{svjour3}                     % onecolumn (standard format)
+%\documentclass[smallcondensed]{svjour3}     % onecolumn (ditto)
+\documentclass[smallextended]{svjour3}       % onecolumn (second format)
+%\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+\smartqed  % flush right qed marks, e.g. at end of proof
+%
+
+\usepackage{url}
+\usepackage{color}
+\usepackage{graphics,graphicx}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{ifthen}  
+\usepackage{rotating}
+\usepackage{tabularx}
+\usepackage{tabulary}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{adjustbox}
+\usepackage[]{algorithm2e}
+%
+% \usepackage{mathptmx}      % use Times fonts if available on your TeX system
+%
+% insert here the call for the packages your document requires
+%\usepackage{latexsym}
+% etc.
+%
+% please place your own definitions here and don't use \def but
+% \newcommand{}{}
+%
+% Insert the name of "your journal" with
+% \journalname{myjournal}
+%
+
+\newcommand{\ym}[1]{\textcolor{blue}{#1}}
+\newcommand{\todo}[1]{\textcolor{red}{#1}}
+\newcommand{\anon}[1]{\textcolor{black}{~(anon.)}}
+\newcommand{\anoncite}[1]{\textcolor{black}{[anon.]}}
+
+\begin{document}
+
+\title{The Impact of Result Diversification on Search Behaviour and Performance}
+
+%\subtitle{Do you have a subtitle?\\ If so, write it here}
+
+%\titlerunning{Short form of title}        % if too long for running head
+
+\author{Maxwell \and
+        Azzopardi \and Moshfeghi 
+}
+
+%\authorrunning{Short form of author list} % if too long for running head
+
+\institute{David Maxwell \at
+              University of Glasgow \\
+              \email{d.maxwell.1@research.gla.ac.uk}             \\
+%             \emph{Present address:} of F. Author  %  if needed
+           \and
+           Leif Azzopardi \at
+              University of Strathclyde\\
+              \email{leif.azzopardi@strath.ac.uk} \\
+            \and
+           Yashar Moshfeghi \at
+              University of Strathclyde\\
+              \email{yashar.moshfeghi@strath.ac.uk} \\    
+}
+
+\date{Received: date / Accepted: date}
+% The correct dates will be entered by the editor
+
+
+\maketitle
+
+\begin{abstract}
+Result diversification aims to provide searchers with a broader view of the topic, while trying to maximise the chances of retrieving relevant material. Diversification of results also aims to reduce search bias by increasing the coverage over different aspects of the topic and so users should learn more about the topic in general. Despite \emph{diversity} algorithms being introduced over 20 years ago, little research has explicitly examined their impact on search behaviour and performance in the context of \emph{Interactive Information Retrieval (IIR)}. In this paper, we explore the impact of diversification when searchers undertake complex search tasks, which require learning about different aspects of a topic i.e. \emph{aspectual retrieval}. For such aspectual retrieval tasks, diversification \emph{should} lead to performance benefits, but does it also lead to improvements on \emph{ad-hoc retrieval} tasks? And, how does diversification affect user's search behaviour and their satisfaction?
+
+Based on Information Foraging Theory, we infer two, seemingly counter intuitive, hypotheses, whereby diversification 
+will lead to searchers to examine fewer documents per query, and issue more queries. To this end, we performed a within-subjects user study using the \emph{TREC AQUAINT} collection with 51 participants, examining the differences in search performance and behaviour when using: \emph{(i)} a non-diversified system (\emph{BM25}); versus \emph{(ii)} a diversified system (BM25+\emph{xQuAD}) when the search task is either: \emph{(a)} ad-hoc; or \emph{(b)} aspectual. Our results show a number of notable findings in terms of search behaviour, with participants on the diversified system, issuing more queries, and examining fewer documents per query. Furthermore, we show that participants on the diversified system were more confident about their decisions, more successful, and found a greater number of aspects about the topics. We also observed that the diversified system was preferred and led to greater success by participants, regardless of the search task. This work shows that searchers' behaviours (and thus the user model by which we evaluate systems) changes depending on the retrieval algorithm and task. This work motivates further research into  complex search tasks, such as aspectual retrieval, and how diversity can play an important role in improving the search experience, as well as potentially mitigate bias in search results.
+
+
+\keywords{First keyword \and Second keyword \and More}
+% \PACS{PACS code1 \and PACS code2 \and more}
+% \subclass{MSC code1 \and MSC code2 \and more}
+\end{abstract}
+
+\input{introduction}
+\input{background}
+\input{ift}
+\input{method}
+\input{results}
+\input{conclusion}
+
+%\bibliographystyle{spbasic}
+\bibliographystyle{spmpsci} 
+\bibliography{references}
+
+
+
+%\begin{acknowledgements}
+%If you'd like to thank anyone, place your comments here
+%and remove the percent signs.
+%\end{acknowledgements}
+
+% BibTeX users please use one of
+%\bibliographystyle{spbasic}      % basic style, author-year citations
+%\bibliographystyle{spmpsci}      % mathematics and physical sciences
+%\bibliographystyle{spphys}       % APS-like style for physics
+%\bibliography{}   % name your BibTeX data base
+
+% Non-BibTeX users please use
+%\begin{thebibliography}{}
+%
+% and use \bibitem to create references. Consult the Instructions
+% for authors for reference list style.
+%
+%\bibitem{RefJ}
+% Format for Journal Reference
+%Author, Article title, Journal, Volume, page numbers (year)
+% Format for books
+%\bibitem{RefB}
+%Author, Book title, page numbers. Publisher, place (year)
+% etc
+%\end{thebibliography}
+
+\end{document}
+% end of file template.tex
+

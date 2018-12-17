@@ -1,0 +1,227 @@
+%!TEX root = sigir2018aspects.tex
+\section{Background and Motivation} \label{sec:background}
+When searching for information, searchers pose a varying number of queries, examine \emph{Search Engine Result Pages (SERPs)}, and examine a number of documents (if any) before issuing a new query, or stopping their search altogether. This may be because they have found enough information, have run out of time, were dissatisfied, or simply gave up their search~\cite{diriye2012abandonment,hassan2013beyond_clicks,kiseleva2015serp_fails,dostert2009stopping_behaviours,prabha2007enough,zach2005stopping_behaviours}. Prior work has shown that there are a variety of different factors that can influence people's search behaviours. Of particular relevance to this paper, it has been shown that different search tasks influence the search behaviour of users~\cite{kelly2015search_tasks}.
+
+An interesting task that has not received much attention as of late is aspectual retrieval. Aspectual retrieval is a type of search task that concerns the identification of different \emph{aspects} of a given topic. This task type differs from traditional ad-hoc retrieval in the sense that ad-hoc retrieval is concerned only with what constitutes a \emph{relevant} document to a given topic, rather than identifying relevant documents, and whether they are \emph{different} to what has been seen previously. A relevant and different document will contain unseen \emph{aspects} associated with the topic in question. As an example, take the topic \emph{wildlife extinction}, one of the topics in the \emph{TREC 2005 Robust Track}~\cite{voorhees2006trec_robust}. In an ad-hoc search task, if the searcher finds several documents concerning \texttt{`Pandas in China'}, then these would all be considered relevant. However, for the aspectual retrieval task, where \emph{different} examples must be found, then the first document concerning \texttt{`Pandas in China'} is considered relevant/useful, and other aspects (in this case, species of endangered animals) would need to be found, such as \texttt{`Sumatran Rhinos in Malaysia'}, \texttt{`Crested Ibis in Japan'}, etc.
+
+%As previously mentioned, in ad hoc topic retrieval the user is tasked with finding a number of relevant documents about a particular topic. The main focus in ad hoc topic retrieval is on whether documents are relevant or not, and not whether they are different. Whereas, in aspectual retrieval task, documents have to satisfy both conditions. For example, lets say the topic is ``wildlife extinction'', where the searcher needs to write a report based on examples. In the ad hoc task, if the user finds several documents regarding ``Pandas in China'' then these would be considered relevant. In the aspectual retrieval task, where the search needs to write a report based on a number of different examples/species, then the first document found regarding ``Pandas in China'' is considered relevant/useful, and other aspects (in this case species) would need to be found, e.g. ``Sumatran Rhinos in Malaysia'', ``Ibis in Japan'', etc. 
+
+Aspectual retrieval found significant traction in the \textit{TREC Interactive Tracks} from $1997$--$2002$. The overarching, high-level goal of the TREC Interactive Tracks was to investigate searching, as an interactive task, by examining the process of searching, as well as the outcome~\cite{over2001trec}. Historically, interaction was considered from the inaugural \emph{TREC-1} in 1993~\cite{harman1993trec1}, where one group investigated interactive searching under \emph{``interactive query mode''} within the ad-hoc task. From TREC-6 to TREC 2002, a substantial volume of research was directed towards the development of systems and search interfaces that: \emph{(i)} assisted users in exploring and retrieving various aspects of a topic, such as cluster-based and faceted interfaces that explicitly showed different aspects~\cite{villa2009aspect_interface,mcdonald1998interactive}; \emph{(ii)} tiles and stacks to organise documents~\cite{hearst1995tilebars,hearst1997texttiling,harper2006piling,iwata2012tilediversified}; and \emph{(iii)} mechanisms to provide query suggestions that lead to different search paths~\cite{umemoto2016scentbar,kato2012query_suggestion}. However, a disappointing conclusion from this initiative was that little difference was observed between such systems, and the standard control systems \emph{(ten blue links)}, both in terms of behaviour and performance~\cite{voorhees05trec}.
+
+%When searching for information users poses various queries, examine result pages, and examine a number of documents (if any), before issuing a new query or stopping there search - either because they have found enough, ran out of time, dissatisfied or just give up. \todo{cite some stopping papers}. It has been shown in prior work that various factors influence people's search behavior - in particularly it has been shown that different tasks influence the search behavior of users ~\cite{kelly2015search_tasks}. An interesting task that has not received much attention of late, is aspectual retrieval. \todo{define the task, explain how it is different from standard ad hoc retrieval} 
+
+% \todo{decribe trec interactive}
+% As part of the \emph{TREC Interactive Tracks} from $1997$--$2002$, a substantial volume of research was directed towards the development of systems and interfaces that: \emph{(i)} assist users to explore and retrieve various aspects of a topic, such as cluster-based and faceted interfaces that explicitly show different aspects~\cite{villa2009aspect_interface}; \emph{(ii)} provide query suggestions to recommend different search paths~\cite{}; and \emph{(iii)} tiles and stacks to organise documents~\cite{}. 
+% % http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.800.2745&rep=rep1&type=pdf
+% \todo{I made up these examples,.. villas work is an example of (i), marti hearst (text tiles), and kelly and harper (stacks) 2006? query suggestions??? - one or tow lines on each example}
+
+
+
+%An aspectual interface for supporting complex search tasks
+%Villa, R., Cantador, I., Joho, H. and Jose, J. (2009) An aspectual interface for supporting complex search tasks. In: 32nd International ACM SIGIR Conference on Research and Development in Information Retrieval, Boston, MA, USA, 19-23 Jul 2009, pp. 379-386. ISBN 9781605584836 (doi:10.1145/1571941.1572007)
+%\url{https://pdfs.semanticscholar.org/9252/99bf44136cccef1ff42a374171617b2dedc7.pdf}
+
+% From sanderson2009diversity
+% The TREC interactive tracks in TREC 6-8 created relevance judgments with topic clusters, however only 20 topics were created [6, 7]. More recently Clarke et al [8] adapted a question-answering collection to be used as a retrieval collection with topic clusters in its relevance judgments. To the best of our knowledge, these collections represent the totality of resources available to the research community. We describe the adaptation of an existing test collection to support measurement of diversity.
+
+%Work that considers the \emph{diversification} of search results can be traced back to the \emph{Robust Tracks} of late 1990's \emph{TREC} efforts, including \emph{TREC-5} and \emph{TREC-6}. Originally, TREC 4 introduced the ad hoc topic retrieval, where teams would ask subjects to find as many relevant documents as they could to the given topic, without collecting too many non-relevant items. TREC-5 and TREC-6 introduced \emph{aspectual} or \emph{instance} recall, where searchers were tasked to find documents discussing different \emph{aspects} of a given topic. This led to a list of topic aspects discussed by certain documents, with evaluation conducted by aspectual recall. TREC7-9 introduced aspectual precision to the mix.
+
+As work on aspectual retrieval subsided, work related to determining the intent of a searcher's query began to take hold, where the goal of this problem is to diversify the results retrieved with respect to the original query~\cite{rose2004understanding_user_goals}. Thus, this addresses the problem of \emph{ambiguity} for short, impoverished queries. This led to a series of diversification algorithms (and intent-aware evaluation measures) being proposed, changing focus from the interface to the underlying algorithms and their evaluation measures (e.g.~\cite{santos2010query_reformulations_diversification,santos2011intent,carbonell1998mmr,zuccon2009qprp,agrawal2009diversification,radlinski2006diversification,he2011diversification_clustering,carterette2009probabalistic,chen2006lessismore,zhai2015subtopics}). However, while there have been numerous studies investigating the effectiveness of diversification algorithms for the problem of \emph{intents} (e.g. one query, several interpretations), little work has looked at studying how such algorithms apply in the context of aspectual retrieval (e.g. one topic, many aspects). This is mainly because most of these algorithms were developed after the TREC Interactive Track finished in 2002.
+
+Recently, however, a growing interest in new, more complex and exploratory search tasks has taken hold -- especially in the aforementioned context of \emph{``search as learning''}~\cite{collins2017sal}. Syed and Collins-Thompson~\cite{syed2017sal} hypothesised that diversifying the results presented to users would improve their learning efficiency and that this would be observed by the change in vocabulary expressed in user queries. This study motivates our interest in examining the effects of diversification (or not)  when considering the task of aspectual retrieval (where a user needs to learn about different aspects)  This in this paper, our aim is to better understand how search performance and search behaviour changes when people undertake different types of search task, using search systems that diversify the ranked results, and those that don't. To ground this study, we first consider how search behaviour is likely to change by generating hypotheses from Information Foraging Theory.
+
+%Work then went silent in the area, until Sp\"{a}rck Jones et al.~\cite{sparckjones2007ambiguous_requests} discussed the need to consider how retrieval systems are better able to deliver a diversified set of search results. This was then demonstrated by Sanderson~\cite{sanderson2008ambiguous_queries} who showed the extent of the problem by showing queries in search logs having multiple interpretations, and the adaptation of an image test collection being adapted for diversity experiments~\cite{sanderson2009diversity}. Work in the area of \emph{diversifying} search results has in recent years resulted in the development of several frameworks and algorithms for specifically dealing with this issue (e.g. \emph{xQuAD}\todo{~\cite{santos2010query_reformulations_diversification}})
+
+%As such, providing a more \emph{diverse} set of results for the ambiguous query -- a set of results that covers multiple interpretations of the given query, or potential \emph{aspects} -- would likely increase the chances of satisfying the user's underlying information need~\cite{agrawal2009diversification}. A more diverse set of documents would assist the searcher in building his or her underlying mental model of the information need, allowing for a subsequent (and less ambiguous) query reformulation.
+
+
+%Despite the research that has been undertaken in this area of IR over the years, we still do not have a good understanding of how one's search behaviour, performance and user experience change when subjected to a system that is purposefully diversifying search results. 
+
+%nteractive Information Retrieval (IIR) 
+%An \emph{Information Retrieval (IR)} system will produce, given a query, a ranked list of retrieved documents ordered by declining relevance (according to the retrieval algorithm(s) being used) to said query~\cite{carbonell1998mmr}. These systems exist to satisfy the issuer's underlying information need, represented as the query. Belkin introduced the concept of the \emph{Anomalous State of Knowledge (ASK)}~\cite{belkin1980anomalous_states}, where a searcher is typically unable to precisely formulate a query that allows the system to retrieve the document(s) that they are looking for. Indeed, a typical ranking approach does not consider how relevant documents that discuss similar \emph{aspects} of a particular topic should be retrieved and ranked; nor does it consider the possibility that the query provided may have different possible interpretations -- or is \emph{ambiguous}~\cite{sanderson2009diversity}. This is exacerbated by the fact that as IR systems have become more commonplace in our daily lives, the queries posed to them are typically only a few terms in length~\cite{jansen2006search_logs, hearst2009_search}. This is in comparison to previous studies from the early 1990's examining query ambiguity, where these queries were assumed to express a complex information need in a sentence~\cite{krovetz1992lexical_ambiguity}.
+
+
+
+
+%Given the pitfall of ambiguity, what potential solutions exist to tackle this issue? As outlined by Santos et al.~\cite{santos2010query_reformulations_diversification}, the designers of search engines can tackle this problem in four different ways. Designers can either make their search engine: 
+
+%\begin{enumerate}
+%    \item{totally ignore the fact that the query may be ambiguous, instead treating the query as a representation of a well-defined information need;}
+%    \item{infer the most plausible meaning for the underlying query, perhaps by examining historical search logs to determine the most popular inferred meaning;}
+%    \item{explicitly prompt the user for feedback; or}
+%    \item{\emph{diversify} the results that are returned to the searcher.}
+%\end{enumerate}
+
+%The first three options are inherently risky; there is a chance that by inferring a meaning to an ambiguous query, the inferred meaning may be wrong. So too is the concept of prompting for explicit feedback; users are likely to be unwilling to go the extra mile to provide an explicit \emph{`did you mean this'} clarification~\cite{hearst2009_search} -- and indeed, this may create an undesirable time consuming and patience trying feedback loop where further clarification is required. 
+
+% - ASK
+% - How do we cover this?
+% - Diversify!
+%
+% - Research in this area has a long line
+% - Starting with the TREC Aspect Retrieval Track of the 1990's.
+% - From there, aspectual retrieval... paragraph
+%
+% - The track finished in the late 1990's.
+%
+% - Then comes the modern day diversity research.
+%
+% - Different intents.
+%
+% - Key: there is little research investigating how people's behaviour changes when using diversified systems.
+% - This is what this paper aims to address.
+
+
+% most of it is not relevant
+%
+%
+% [6:18]
+% the main thing is to say
+%
+%
+% [6:18]
+% most papers have focused on diversity in context x y z
+%
+%
+% [6:18]
+% where they have developed various algos, such as a b c
+%
+%
+% [6:18]
+% other papers have focused on evaluation.. using measures such as  i j k
+%
+%
+% [6:19]
+% however, there has been little work investigating how peoples behavior changes
+%
+%
+% [6:19]
+% etc.
+%
+% Query ambiguity. For example, Krovetz and Croft~\cite{krovetz1992lexical_ambiguity} conducted a careful examination of the extent of
+% word sense ambiguity in test collections (e.g. TIME and CACM).
+% He found that the different senses of ambiguous query words
+% provided good separation between relevant and non-relevant
+% documents. In addition, by looking up query words in a dictionary
+% (Longman’s Dictionary of Contemporary English) he was able to
+% calculate the average number of senses per non-stop word in the
+% test collection topics. For CACM it was 5.3, for TIME it was 4.8.
+% However, he found that retrieval based on the queries, rarely
+% benefited from disambiguation as highly ranked documents
+% tended to match on a number of words in the query. In such
+% situations, ambiguous query words generally match only on the
+% correct sense. For example, despite the word “bat” being
+% ambiguous, the query “bat echolocation” is unlikely to retrieve
+% top ranked documents referring a sporting implement.
+%
+% At the time of Krovetz’s study, it was largely assumed that
+% queries to ranked retrieval systems would typically be sentence
+% like statements expressing detailed information needs. Jansen and
+% Spink~\cite{jansen2006search_logs} amongst others (e.g.~\cite{hearst2009_search}) showed that queries are typically much
+% shorter [12], therefore potentially more ambiguous. In addition,
+% Krovetz’s work along with other disambiguation research of the
+% time largely focussed on ambiguity as defined in dictionaries or
+% online thesauri such as WordNet. Such reference corpora
+% provided excellent coverage of ambiguous words. However, their
+% coverage of proper nouns was poor.
+
+
+% \begin{itemize}
+%
+%     \item{Ambiguous Queries -- ~\cite{song2009ambiguous_queries, clarke2008novelty_diversity, sanderson2008ambiguous_queries}}
+%
+%     \item{Reformulation -- ~\cite{santos2010query_reformulations_diversification}}
+%
+%     \item{Interfaces -- ~\cite{villa2009aspect_interface}}
+%
+%     \item{Diversity -- ~\cite{agrawal2009diversification}}
+%
+%     \item{Measures -- ~\cite{tang2010spatial_diversity, carbonell1998mmr, clarke2008novelty_diversity}}
+%
+%     \item{Spatial Diversity -- ~\cite{vankreveld2005geographic_ir, tang2010spatial_diversity, clough2006spatial_relevance, grubinger2006iapr}}
+%
+% \end{itemize}
+
+
+
+
+% Retrieval systems exist in order to satisfy the underlying information need of a searcher.
+%
+% ``Belkin realized that in many cases, users of search systems are unable to precisely formulate what they need. They miss some vital knowledge to formulate their queries. In such cases it is more suitable to attempt to describe a user's anomalous state of knowledge than to ask the user to specify her/his need as a request to the system.''
+%
+% \begin{itemize}
+%
+%     \item{so people represent their information need as a query.}
+%     \item{but the information need may not be complete. ASK.}
+%     \item{so, there is a risk that the query that is posed may be ambiguous.}
+%     \item{the term ambiguous queries split into three broad classes as per~\cite{song2009ambiguous_queries, clarke2008novelty_diversity}.}
+%
+%     \item{queries in search logs have multiple interpretations~\cite{sanderson2008ambiguous_queries}}
+%
+%     \begin{itemize}
+%
+%         \item{multiple interpretations}
+%         \item{underspecified queries}
+%         \item{clear queries}
+%
+%     \end{itemize}
+%
+%     \item{how do we deal with this ambiguity?~\cite{santos2010query_reformulations_diversification} has different approaches one can take.}
+%
+%     \item{Designers can either make their search engine: \emph{(i)} totally ignore the fact that the query may be ambiguous, instead treating the query as a representation of a well-defined information need; \emph{(ii)} infer the most plausible meaning for the underlying query, perhaps by examining historical search logs to determine the most popular inferred meaning; \emph{(iii)} explicitly prompt the user for feedback; or \emph{(iv)} \emph{diversify} the results that are returned to the searcher. The first three options are inherently risky; there is a chance that by inferring a meaning to an ambiguous query, the inferred meaning may be wrong. So too is the concept of prompting for explicit feedback; users may be unwilling to go the extra mile to provide this clarification~\cite{hearst2009_search} -- and indeed, this may create a loop where further clarification is required. As such, providing a more \emph{diverse} set of results for the ambiguous query would be a safe bet -- hopefully one of the meanings would satisfy the user's information need~\cite{agrawal2009diversification}.}
+%
+%     \item{Clearly, an approach where you hedge your bets would be best -- hence the need to diversify search results.}
+%
+%     \item{New paragraph}
+%
+%     \item{So work in the area of search diversification is...diverse. Lots of the work focuses on addressing the very issue of query ambiguity.}
+%
+%     \item{Brunt of the work has focused on the development of search/retrieval algorithms that promote diversity in the results that are returned. Examples include Maximum Marginal Relevance (MMR), a widely-used metric in Information Retrieval research. This focuses on semantics of documents or the visual content of images~\cite{tang2010spatial_diversity}.}
+%
+%     \item{There's another area, too -- spatial diversity~\cite{vankreveld2005geographic_ir, tang2010spatial_diversity, clough2006spatial_relevance, grubinger2006iapr}.}
+%
+% \end{itemize}
+
+
+% \todo{Below is from~\cite{sanderson2009diversity}:}\\
+% \todo{fit in ASK, and the stuff from the introduction?}
+% The underlying principle of most retrieval systems is to rank documents in the order
+% of their similarity to the query. However such an approach fails to consider how
+% similar relevant documents should be retrieved; neither does it consider the potential
+% for queries with different interpretations, where documents relevant to distinct
+% interpretations might need to be retrieved at the same time. Spärck Jones et al.~\cite{sparckjones2007ambiguous_requests}
+% discussed the need to consider such retrieval and more recently, Sanderson~\cite{sanderson2008ambiguous_queries}
+% demonstrated the extent of queries in search logs that have multiple interpretations.
+% Some research on devising search algorithms that promote diversity has been
+% conducted: Maximal Marginal Relevance (MMR)~\cite{carbonell1998mmr}; Maximal Diverse Relevance
+% from Zhai~\cite{zhai2002risk_minimisation} and follow on work from Chen and Karger~\cite{chen2006probabilistic_models}. A common theme to the
+% work was almost a complete lack of a test collection with queries that required diverse
+% search with relevance judgments that describe links between documents. The TREC
+% interactive tracks in TREC 6-8 created relevance judgments with topic clusters,
+% however only 20 topics were created [6, 7]. More recently Clarke et al [8] adapted a
+% question-answering collection to be used as a retrieval collection with topic clusters in
+% its relevance judgments. To the best of our knowledge, these collections represent the
+% totality of resources available to the research community. We describe the adaptation
+% of an existing test collection to support measurement of diversity.
+
+% MMR~\cite{carbonell1998mmr}
+%
+%
+% From WWW 2004~\cite{rose2004understanding_user_goals}:
+%
+% Studies of user search behavior have a long history in Information and Library Science. These include studies of the reference interview process, long before most users had access to computer- assisted search tools. When search engines first became available for use by researchers, many studies were conducted that attempted to understand user search behavior in an online context. For example, Bates [4] looked at the different ways in which people performed searches, and later proposed ways to characterize the overall search process [5]. Belkin’s Anomalous States of Knowledge (ASK) framework was an early attempt to model the cognitive state of the user and then translate this understanding into a practical design for an information retrieval system [6]. Included in the ASK study was an analysis of some of the different types of information needs of different users. For example, one type of ASK was summarized as ``Well-defined topic and problem,'' while another was ``Information needed to produce directions for research.''
+%
+% \subsection{System-Sided Research}
+%
+%
+% \subsection{Query Ambiguity}
+%
+%
+% \subsection{Spatial Diversity}
+% While most of the research on diversity in IR is concerned with the semantics of documents or the visual content of images, some other researchers raised the importance of another dimension of diversity - spatial diversity~\cite{vankreveld2005geographic_ir, tang2010spatial_diversity, clough2006spatial_relevance, grubinger2006iapr}.
+%
+% ``Evaluation and User Preference Study on Spatial Diversity''~\cite{tang2010spatial_diversity}
+%
+%
+% \subsection{Summarising Paragraph}
+% Despite all the work that has been done in the area of diversity, we do know little about how introducing a diversity algorithm affects the behaviours, the performance and the perceived experiences of searchers when using such a search system. We know queries are diverse, yes, but what about the depth they go to? Does a system using a diversification algorithm mean that searchers will go to shallower depths? Do they feel more satisfied using such a system? This paper attempt to fill the gap in our collective knowledge by addressing these questions.
