@@ -138,11 +138,12 @@ From the log data, we could also compute additional performance measures such as
 %%%%%%%%
 \subsection{User Experience}\label{sec:method:experience}
 %%%%%%%%
-To capture their perceived experiences, we asked subjects to complete both pre- and post-task surveys for each of the four experimental conditions they undertook.
+To capture their perceived experiences, we asked subjects to complete both pre- and post-task surveys for each of the four experimental conditions that they were presented with during the experiment.
 
-Pre-task surveys consisted of five questions, each of which was on a seven-point Likert scale ($7$ -- strongly agree to $1$ -- strongly disagree). Subjects were sought for their opinions on their: \emph{(i)} prior knowledge of the topic; \emph{(ii)} the relevancy of the topic to their lives; \emph{(iii)} their desire to learn about the topic; \emph{(iv)} whether they had searched on this topic before; and \emph{(v)} the perceived difficulty to search for information on the topic.
+Pre-task surveys consisted of five questions, each of which was on a seven-point Likert scale ($1$ -- strongly disgaree to $7$ -- strongly agree). Subjects were sought for their opinions on their: \emph{(i)} prior knowledge of the topic; \emph{(ii)} the relevancy of the topic to their lives; \emph{(iii)} their desire to learn about the topic; \emph{(iv)} whether they had searched on this topic before; and \emph{(v)} the perceived difficulty to search for information on the topic.
 
-Following the completion of each search task, subjects were provided with a post-task survey, again using a seven-point Likert scale. The survey considered aspects of \emph{(i)} their behaviour, and \emph{(ii)} how they felt the system performed. Considering their behaviours, subjects were asked for their opinions on:
+Following the completion of each search task, subjects were provided with a post-task survey, again using a seven-point Likert scale for responses. The survey considered aspects of \emph{(i)} their behaviour, and \emph{(ii)} how they felt the system performed. Considering their behaviours, subjects were asked for their opinions on:
+
 \begin{itemize}
 \item how successful they thought they were at completing the task \emph{\textbf{(success)}}; 
 \item how quickly they felt they completed the task \emph{\textbf{(subject speed)}}; 
@@ -160,13 +161,24 @@ Subjects were also asked for their opinions on:
 \item whether the system was cumbersome or not \emph{\textbf{(cumbersome)}}; and 
 \item whether they were confident in the decisions they made \emph{\textbf{(confident)}}. 
 \end{itemize}
-Upon completion of the experiment, subjects were provided with an exit survey consisting of several questions. Here, we wanted to ascertain which of the two search system offered the best performance, and which one they preferred. 
+
+Upon completion of the experiment, subjects were provided with an exit survey consisting of several questions. Here, we wanted to ascertain which of the two search system offered the best performance, and which one they preferred. Answers were provided on a scale this time from $1-6$, with: $1$ denoting \emph{definitely Hula Search} (non-diversified); $3$ denoting \emph{slightly Hula Search;} $4$ denoting \emph{slightly YoYo Search}; and $6$ denoting \emph{definitely YoYo Search} (diversified). We opted not to include a neutral position to forces subjects into deciding between one of the two systems. We asked subjects:
+
+\begin{itemize}
+    \item{which system was most informative \emph{\textbf{(informative)}};}
+    \item{which system was more unhelpful \emph{\textbf{(unhelpful)}};}
+    \item{what one was easier to use \emph{\textbf{(easiest)}};}
+    \item{what system was less useful \emph{\textbf{(least useful)}};}
+    \item{what system returned more relevant information \emph{\textbf{(most relevant)}};}
+    \item{what system offered the more diverse set of results \emph{\textbf{(most diverse)}}; and}
+    \item{what system they preferred overall \emph{\textbf{(most preferable)}}.}
+\end{itemize}
 
 %We provided a scale from $1$-$6$, from $1$ (definitely \emph{Diversified System Name}) to $3$ (slightly \emph{Diversified System Name}), from $4$ (slightly \emph{Non-Diversified System Name}) to $6$ (definitely \emph{Non-Diversified System Name}). We opted not to include a neutral option to force the subjects into deciding between one of the two systems. We asked subjects: which system was most informative \emph{\textbf{(informative)}}; which was the most unhelpful \emph{\textbf{(unhelpful)}}; which was easiest \emph{\textbf{(easiest)}}; which was the most useful \emph{\textbf{(useful)}}; which system returned the most \emph{relevant} information \emph{\textbf{(rel. preferred)}}; which system returned the most \emph{diverse} information \emph{\textbf{(div. preferred)}}; and which system was preferred overall \emph{\textbf{(preferred)}}.
 
 % From results; moved here to fit in the correct place in the paper.
 \begin{table}[t]
-    \caption{Query statistics and performance measures across both of the experimental systems trialled, \textbf{\textit{ND}} (Non-Diversified) and \textbf{\textit{D}} (Diversified). Note the significant differences between the diversity-centric measures, \boldmath{$\alpha DCG$} (where \boldmath{$\alpha=0.5$}) and Aspectual Recall (\boldmath{$AspR.$}), highlighting that the diversification algorithm did indeed provide a more diverse set of results to the subjects.}
+    \caption{Query statistics and performance measures across both of the experimental systems trialled, \textbf{\textit{ND}} (Non-Diversified) and \textbf{\textit{D}} (Diversified). Note the significant differences between the diversity-centric measures, \boldmath{$\alpha DCG$} (where \boldmath{$\alpha=0.5$}) and Aspectual Recall (\boldmath{$AR$}), highlighting that the diversification algorithm did indeed provide a more diverse set of results to the subjects.}
     \label{tbl_queryperf_2018}
     \renewcommand{\arraystretch}{1.5}
     \begin{center}
@@ -187,8 +199,8 @@ Upon completion of the experiment, subjects were provided with an exit survey co
     \multirow{2}{*}{\rotatebox{90}{\hspace*{-1mm}\small{\boldmath{$\alpha DCG$}}}} & \boldmath{$\alpha DCG@5$} & $0.02\pm 0.00$* & $0.04\pm 0.00$* \\ \cline{2-4}
     & \boldmath{$\alpha DCG@10$} & $0.03\pm 0.00$* & $0.04\pm 0.00$* \\ \hline\hline
        
-    \multirow{2}{*}{\rotatebox{90}{\hspace*{-1mm}\small{\boldmath{$AspR.$}}}} & \boldmath{$AspR.@5$} & $1.40\pm 0.11$* & $3.39\pm 0.21$*  \\ \cline{2-4}
-    & \boldmath{$AspR.@10$} & $2.11\pm 0.14$* & $4.07\pm 0.24$*  \\ \hline    
+    \multirow{2}{*}{\rotatebox{90}{\hspace*{-1mm}\small{\boldmath{$AR$}}}} & \boldmath{$AR@5$} & $1.40\pm 0.11$* & $3.39\pm 0.21$*  \\ \cline{2-4}
+    & \boldmath{$AR@10$} & $2.11\pm 0.14$* & $4.07\pm 0.24$*  \\ \hline    
     \end{tabulary}
     \vspace*{-4mm}
     \end{center}
