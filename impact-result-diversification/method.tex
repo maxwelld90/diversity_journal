@@ -1,6 +1,6 @@
 %!TEX root = jir2018aspects.tex
 \section{Experimental Method} \label{sec:method}
-To address our research questions and examine the hypotheses as outlined in Section~\ref{sec:questions}, we conducted a within-subjects experiment with two factors: system and task. For the system factor, our baseline control system was based on BM25 (no diversification) and a diversified system based on BM25, reranked with xQuAD~\cite{santos2010query_reformulations_diversification}. For the task factor, we used the standard ad-hoc retrieval task and compared against the aspectual retrieval task. This resulted in a $2 \times 2$ factorial design. Each participant therefore completed four different search tasks, one in each of the four conditions (see below). Conditions were assigned using a Latin square rotation to minimise any ordering effects.
+To address our research questions and examine the hypotheses as outlined in Section~\ref{sec:questions}, we conducted a within-subjects experiment with two factors: system and task. For the system factor, our baseline control system was based on BM25 (no diversification) and a diversified system based on BM25, re-ranked with xQuAD~\cite{santos2010query_reformulations_diversification}. For the task factor, we used the standard ad-hoc retrieval task and compared against the aspectual retrieval task. This resulted in a $2 \times 2$ factorial design. Each participant therefore completed four different search tasks, one in each of the four conditions (see below). Conditions were assigned using a Latin square rotation to minimise any ordering effects.
 
 %The corpus, topics and system used closely mirror a prior study undertaken by Maxwell et al.~\cite{maxwell2017snippet_length} in which they examined how the length of result summaries affects search behaviour, performance and experience. Summaries of two snippet fragments (roughly equivalent to two lines) resulted in a good tradeoff in terms of examination time and performance. Labelled interface \textbf{\emph{T2}} in their study, we use two snippet fragments in all experimental conditions, as well as the prior nomenclature in the present study. As such, the four experimental conditions we used in this study are listed below.
 
@@ -47,43 +47,89 @@ The total number of aspects identified for each topic were: $14$ for~341, $168$ 
 \label{fig_systems}
 \end{figure}
 
-\subsection{Systems: Non-Diversified and Diversified}\label{sec:method:systems}
+\subsection{Systems: Baseline and User Interface Differences}\label{sec:method:systems}
 Two experimental search systems were developed. These were identical except regarding branding/logo and the retrieval algorithm used. First, in terms of branding, we created two fictional search engine names,
 \textbf{\emph{Hula Search}} and \textbf{\emph{YoYo Search}}, for which different colour schemes were used. The names were chosen as they were not associated with any major search engine (that we were aware of), nor did they imply that one of the systems performed better than the other. The colour schemes were chosen to provide the greatest difference in visual appearance to those with colourblindness (two variants of colourblindness, \emph{protanopia} and \emph{deuteranopia}, were both considered). This was to ensure that subjects could later on indicate which system that they preferred, etc. Screenshots of the two systems in action are provided in Figure~\ref{fig_systems}. 
 Note that a generic \textbf{\emph{NewsSearch}} system -- complete with a blue header -- was used for the practice task. This was done so that subjects could familiarise themselves with how to mark and save documents, and how the search functionality worked.
 
-% \begin{table}[t]
-%     \caption{Table illustrating the effects of varying \boldmath{$\lambda$} and diversifying rank cutoff $k$ using \emph{xQuAD}. Values in the table represent the number of new aspects found (aspectual recall) in the top $10$ documents after re-ranking on average, over $715$ queries issued from a prior user study~\anoncite{}. When \boldmath{$\lambda=0.0$}, diversification is not applied -- this configuration therefore enjoys the same performance as our non-diversified system, \textbf{\emph{ND}}, which utilises BM25 (\boldmath{$b=0.75$}).\vspace*{-3mm}}
-%     \label{tbl:previous_queries}
-%     \renewcommand{\arraystretch}{1.4}
-%     \begin{center}
-%     \begin{tabulary}{\textwidth}{L{1.2cm}||D{1.0cm}|D{1.0cm}|D{1.0cm}|D{1.0cm}|D{1.0cm}}
-%     \hline
-    
-%     % HEADERS
-%     & \multicolumn{5}{c}{\boldmath{$k=$}} \\
-    
-%     \boldmath{$\lambda=$} & \boldmath{$10$} & \boldmath{$20$} & \boldmath{$30$} \textbf{\emph{(D)}} & \boldmath{$40$} & \boldmath{$50$} \\ \hline\hline
-    
-%     % VALUES
-%     % These results came from sigir-2017-combined.csv -- using an Excel PivotTable. No MATLAB script.
-%     \boldmath{$0.0$} \emph{\textbf{(ND)}} & \multicolumn{5}{c}{$3.64$} \\ \hline
-%     \boldmath{$0.1$} & $3.64$ & $4.94$ & $5.51$ & $5.95$ & $6.37$ \\ \hline
-%     \boldmath{$0.3$} & $6.58$ & $6.58$ & $6.64$ & $6.59$ & $6.59$ \\ \hline
-%     \boldmath{$0.5$} & $6.58$ & $6.58$ & $6.58$ & $5.58$ & $6.58$ \\ \hline
-%     \boldmath{$0.7$} \emph{\textbf{(D)}} & $6.56$ & $6.56$ & \boldmath{$6.61$} & $6.51$ & $6.60$ \\ \hline
-%     \boldmath{$0.9$} & $6.52$ & $6.52$ & $6.61$ & $6.57$ & $6.63$ \\ \hline
-%     \boldmath{$1.0$} & $6.63$ & $6.63$ & $6.59$ & $6.61$ & $6.56$ \\ \hline
-%     % END
-% \end{tabulary}
-% \end{center}
-% \vspace*{-5mm}
-% \end{table}
-
-For the underlying search engine, we used the \emph{Whoosh Information Retrieval (IR)} toolkit.\footnote{Whoosh can be accessed at \texttt{\url{https://pypi.python.org/pypi/Whoosh/}}.} We used BM25 as the retrieval algorithm ($b=0.75$), but with an implicit \texttt{AND}ing of query terms to restrict the set of retrieved documents to only those that contained all query terms provided. This was chosen as most retrieval systems implicitly \texttt{AND} terms together. BM25 served as the baseline control for the non-diversified system condition. For the diversified system condition, we used BM25 to provide the initial ranking and then used xQuAD~\cite{santos2010query_reformulations_diversification} to diversify the ranking. xQuAD has been shown to provide excellent performance for web intent-based diversification. To select the parameters for xQuAD, i.e. $k$, how many documents to re-rank, and $\lambda$ how much focus on diversification, we performed a parameter sweep using a set of training queries from a prior user study~\cite{maxwell2017snippet_length}. We explored a range of $k$ and $\lambda$ values, with $10$--$50$ trialled for $k$, and $0.1$--$1.0$ for $\lambda$. We selected $k=30, \lambda=0.7$ as this configuration provided the best results ($P@10=0.36$, $\alpha DCG@10=0.075$, \emph{aspectual recall (AR)}$@10=6.61$) in terms of performance and efficiency -- i.e. a higher $k$ only slightly increased performance, but took longer to compute.
+For the underlying search engine, we used the \emph{Whoosh Information Retrieval (IR)} toolkit.\footnote{Whoosh can be accessed at \texttt{\url{https://pypi.python.org/pypi/Whoosh/}}.} We used BM25 as the retrieval algorithm ($b=0.75$), but with an implicit \texttt{AND}ing of query terms to restrict the set of retrieved documents to only those that contained all query terms provided. This was chosen as most retrieval systems implicitly \texttt{AND} terms together. BM25 served as the baseline control for the non-diversified system condition.
 
 %% Removed table and revised paragraph below to accommodate missing table.
 %Table~\ref{tbl:previous_queries} illustrates the parameter sweep when considering the number of new entities found (aspectual recall) within the top $10$ results, re-ranked after applying xQuAD. Similar conclusions could be reached when examining both $\alpha DCG@10$ (where $\alpha=0.5$) and $P@10$. We found that $k=30$ and $\lambda=0.7$ provided the best results in terms of performance and efficiency -- i.e. a higher $k$ only slightly increased performance, but took longer. 
+
+\subsection{Diversifying Results}
+For the diversified system, we used BM25 as outlined above to provide the initial ranking and then used xQuAD~\cite{santos2010query_reformulations_diversification} to diversify the ranking. xQuAD has been shown to provide excellent performance for web intent-based diversification. The algorithm used is presented in Algorithm~\ref{algo}, complete with a description of the various inputs, the output and helper functions used.
+
+To select a reasonable approximation for the algorithm's input parameters, i.e. $k$ (how many documents to re-rank) and $\lambda$ (how much focus on diversification), we performed a parameter sweep using a set of $715$ training queries from a prior user study~\cite{maxwell2017snippet_length}. Results from this pilot study are presented in Table~\ref{tbl:previous_queries}. As can be seen from the table, we explored a range of $k$ and $\lambda$ values, with $10$--$50$ trialled for $k$, and $0.1$--$1.0$ for $\lambda$. We selected $k=30, \lambda=0.7$ as this configuration provided the best results ($P@10=0.36$, $\alpha DCG@10=0.075$, \emph{aspectual recall}$@10=6.61$) in terms of performance and efficiency -- i.e. a higher $k$ only slightly increased performance, but took longer to compute.
+
+\begin{algorithm}[t!]
+\SetAlgoLined
+\KwIn{Original ranking, \textit{existingResults}}
+\myinput{Diversification depth ($k=30$)}
+\myinput{$\lambda=0.7$, weighting for diversification scoring component}
+\vspace*{2mm}
+\SetKwInput{KwResult}{Output}
+\KwResult{Manipulated array of results, diversified to depth $k$}
+\vspace*{2mm}
+\SetKwInput{KwResult}{Helpers}
+\KwResult{\textit{getEntities(x,y,z)} Returns an array results $x$, consisting of entities present in documents in array $x$ from range $y$ to $z$}
+\myhelper{\textit{getLength(x)} Returns the length of array $x$}
+\myhelper{\textit{getUnseenEntities(x,y)} Returns entities in document $x$ that have not yet}
+\myhelper{\hspace*{5mm}been observed in ranked document array $y$}
+\myhelper{\textit{sortByScore(x)} Sorts documents array $x$ by \emph{.score} in descending order}
+\myhelper{\textit{array.pop()} Removes the top entry from an array, returning its value}
+ \vspace*{2mm}
+ entities = []\;
+ newRankings = []\;
+ i = 1\;
+ newRankings[0] = existingResults.pop()\;
+ 
+ \While{i $\leq$ k}{
+     entities = getEntities(existingResults, 0, i-1)\;
+     j = 0\;
+     
+     \While{j $\leq$ getLength(existingResults)}{
+         newEntityCount = getUnseenEntities(document, existingResults)\;
+         existingResults[j].score = existingResults[j].score + ($\lambda\cdot$newEntityCount)\;
+         j = j + 1\;
+     }
+     
+     sortByScore(existingResults)\;
+     newRankings[i] = existingResults.pop()\;
+     i = i + 1\;
+ }
+ \vspace*{3mm}
+ \caption{The algorithm employed to diversify results, starting from the BM25 baseline. The algorithm is based upon the xQuAD framework~\cite{santos2010query_reformulations_diversification}. Included in the pseudo-code above are a list of input parameters and simple helper functions used.}
+ \label{algo}
+\end{algorithm}
+
+\begin{table}[t]
+    \caption{Table illustrating the effects of varying $\lambda$ and diversifying rank cutoff $k$ using the diversification algorithm as outlined in Algorithm~\ref{algo}. Values in the table represent the number of new aspects found (aspectual recall) in the top $10$ documents after re-ranking on average, over $715$ queries issued from a prior user study~\cite{maxwell2017snippet_length}. When $\lambda=0.0$, diversification is not applied -- this configuration therefore enjoys the same performance as our non-diversified, baseline system that utilises BM25.}
+    \label{tbl:previous_queries}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{center}
+    \begin{tabulary}{\textwidth}{L{3.2cm}||D{1.2cm}|D{1.2cm}|D{1.2cm}|D{1.2cm}|D{1.2cm}}
+    \hline
+    
+    % HEADERS
+    & \multicolumn{5}{c}{\textbf{Diversification Cutoff (\boldmath{$k$})}} \\
+    
+    \textbf{Weighting (\boldmath{$\lambda$})} & \boldmath{$10$} & \boldmath{$20$} & \boldmath{$30$} \textbf{\emph{(D)}} & \boldmath{$40$} & \boldmath{$50$} \\ \hline\hline
+    
+    % VALUES
+    % These results came from sigir-2017-combined.csv -- using an Excel PivotTable. No MATLAB script.
+    \boldmath{$0.0$} \emph{\textbf{(ND)}} & \multicolumn{5}{c}{$3.64$} \\ \hline
+    \boldmath{$0.1$} & $3.64$ & $4.94$ & $5.51$ & $5.95$ & $6.37$ \\ \hline
+    \boldmath{$0.3$} & $6.58$ & $6.58$ & $6.64$ & $6.59$ & $6.59$ \\ \hline
+    \boldmath{$0.5$} & $6.58$ & $6.58$ & $6.58$ & $5.58$ & $6.58$ \\ \hline
+    \boldmath{$0.7$} \emph{\textbf{(D)}} & $6.56$ & $6.56$ & \boldmath{$6.61$} & $6.51$ & $6.60$ \\ \hline
+    \boldmath{$0.9$} & $6.52$ & $6.52$ & $6.61$ & $6.57$ & $6.63$ \\ \hline
+    \boldmath{$1.0$} & $6.63$ & $6.63$ & $6.59$ & $6.61$ & $6.56$ \\ \hline
+    % END
+\end{tabulary}
+\end{center}
+\vspace*{-5mm}
+\end{table}
 
 \subsection{Experimental Procedure}
 Subjects were provided with a link to an online experimental system that first presented the information sheet regarding the experiment. This was then followed by the consent form which subjects needed to agree to in order to proceed.\footnote{Ethics approval was sought before the experiment from the Department of Computer and Information Sciences at the University of Strathclyde (ethics approval 622).} Subjects were then asked to fill in a brief demographics survey before undertaking the practice task to familiarise themselves with the interface. Once comfortable with the system, subjects could then proceed to undertake the four search tasks. Depending upon the Latin square rotation, subjects would then be provided with one of the four conditions on one of the four topics. For each task, subjects first completed a pre-task questionnaire. They then moved onto the search task itself. After completion of the task, they were asked to fill in a post-task questionnaire. After completing all four search tasks, subjects were then asked to fill in an exit questionnaire regarding which system they preferred. The experiment would then conclude.
