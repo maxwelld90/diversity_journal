@@ -41,7 +41,7 @@ The IDs provided in the `entityid` column then correspond to the entities listed
   3. the AQUAINT document identifier; and
   4. `1` (denoting that the given entity appears within the listed document).
   
-This structure is repeated over all three of the `*.dqrels' files.
+This structure is repeated over all three of the `.dqrels` files.
 
 ## Why Judge Non-Relevant Documents?
 Documents listed in the source QRELs file that were judged to be non-relevant (i.e. judgement of 0) for the five topics considered were also examined. Taking the list of entities for a given topic (i.e. from `entities.csv`), we automatically examined each non-relevant document, looking for an exact term match for each entity. If a match was found within a document, the entity was assigned to that document. This was done as to introduce *noise* into our diversity QRELs. The `combined` diversity QRELs file was therefore used to perform ranking with the diversifying algorithm employed in the study. This was done to avoid rankings becoming too perfect, where only relevant material would have bubbled up to the top.
