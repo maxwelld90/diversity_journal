@@ -15,6 +15,6 @@ view :
 	open jir2018aspects.pdf
 
 clean :
-	rm jir2018aspects.aux
-	rm jir2018aspects.log
-	rm jir2018aspects.blg
+	rm -f jir2018aspects.aux
+	rm -f jir2018aspects.log
+	rm -f jir2018aspects.blg
